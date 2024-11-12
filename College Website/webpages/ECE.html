@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&family=Satisfy&display=swap');
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: rgb(196, 222, 250);
+            height: 12vh;
+            width: 100.75vw;
+        }
+
+        header h2 {
+            font-family: "Pacifico", serif;
+            background: linear-gradient(orangered 40%, rgb(74, 225, 9), blue);
+            color: transparent;
+            background-clip: text;
+
+
+        }
+
+        img {
+            max-height: 12vh;
+            padding-left: 20px;
+        }
+
+        .main {
+            min-width: 90vw;
+        }
+
+        .collapse {
+            padding-left: 250px;
+        }
+
+        ul li {
+            padding-right: 10px;
+        }
+
+        nav {
+            background-color: rgb(223, 220, 220);
+        }
+
+        p {
+            text-indent: 20px;
+            color: rgb(53, 51, 51);
+            font-size: 15px;
+            text-align: justify;
+            padding: 0 20px;
+
+        }
+
+        section {
+            min-height: 52.2vh;
+        }
+
+        section h2 {
+            width: 100vw;
+            background-color: rgb(20, 20, 70);
+            min-height: 7vh;
+        }
+
+        footer {
+            background-image: linear-gradient(rgb(38, 42, 97), rgb(110, 117, 220)), url(../Assets/images/footer.jpg);
+            background-position: center;
+            background-size: cover;
+            background-blend-mode: multiply;
+            width: 100vw;
+        }
+
+        .para {
+            color: yellow;
+        }
+
+        @media screen and (max-width: 1400px) {
+            .collapse {
+                padding-left: 250px;
+            }
+
+            section {
+                min-height: 55.2vh;
+            }
+
+        }
+
+        @media screen and (max-width: 1200px) {
+            section {
+                min-height: 52.2vh;
+            }
+
+        }
+
+        @media screen and (max-width: 992px) {
+            section {
+                min-height: 52.2vh;
+            }
+
+        }
+
+        @media screen and (max-width: 768px) {
+            section {
+                min-height: 63vh;
+            }
+
+        }
+
+        @media screen and (max-width: 556px) {
+            section {
+                min-height: 68vh;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <header class="row row-cols-2 m-0 container-fluid">
+            <div class="logo col-5 "><img src="../Assets/images/logo.png" height="70px" alt="logo"></div>
+            <h2 class="col-7 lh-lg">Sunshine Acadamy</h2>
+        </header>
+        <nav class="navbar-expand-lg navbar-light">
+            <div class="container-fluid ">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">About us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Admission
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="./undergraduate.html">Under Graduate</a></li>
+                                <li><a class="dropdown-item" href="./post-graduate.html">Post Graduate</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Departments
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="./CSE.html">CSE</a></li>
+                                <li><a class="dropdown-item" href="./IT.html">IT</a></li>
+                                <li><a class="dropdown-item" href="./ECE.html">ECE</a></li>
+                                <li><a class="dropdown-item" href="./EEE.html">EEE</a></li>
+                                <li><a class="dropdown-item" href="./MECH.html">MECH</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Facilities
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="../Assets/PDF/Sexual-Harassement-Cell-Committee-Members.pdf">Sexual Harssement Cell</a></li>
+                                <li><a class="dropdown-item" href="../Assets/PDF/Grivence-Redressal-Committee-Members.pdf">Grivence Committe</a></li>
+                                <li><a class="dropdown-item" href="../Assets/PDF/Anti-Ragging-Squad.pdf">Anti-Ragging Squad</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./alumini.html">Alumini</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">Contact</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Login
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="./login.html">Student</a></li>
+                                <li><a class="dropdown-item" href="./login.html">Staff</a></li>
+                                <li><a class="dropdown-item" href="./login.html">Admin</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <section class="m-0 p-0 g-0">
+        <h2 class="m-0  py-3 fs-4  text-white text-center">ELECTRONICS AND COMMUNICATION ENGINEERING</h2>
+        <h5 class="ps-3 pt-4 text-warning">About The Department:</h5>
+        <p>The Department of Electronics & Communication Engineering was started in the year 2008 with the idea of
+            equipping young people with the necessary technical knowledge and professional skills needed to address the
+            challenges in the rapidly growing field of Electronics and Communication Engineering and promoting research
+            in this area. In the world of Smartphones, this department has a very significant role to play. Instigate an
+            eye for detail inside the minds of youngsters and there is they come up with a lot of innovation in
+            electronics. For this mission, the Department is fully equipped with state-of-the-art laboratories such as
+            DSP, VLSI, Optical & Microwave, and RF/Communication.</p>
+    </section>
+    <footer class="row row-cols-lg-2 text-center m-0 g-0">
+        <div class="col-lg-5 ">
+            <h4 class="px-5 py-1 mt-1 text-white">Address</h4>
+            <div class="">
+                <p class="para m-0 fs-6 text-center">Erode - Perundurai Main Road,</p>
+                <p class="para m-0 fs-6  text-center">Vaikkalmedu, Pitchandampalayam (PO),</p>
+                <p class="para fs-6  text-center">Erode - 638 052</p>
+            </div>
+        </div>
+        <div class="col-lg-5 p-3 m-0 g-0">
+            <h4 class="text-white">FOLLOW US ON</h4>
+            <div>
+                <a href="#"><img src="../Assets/images/facebook.png" alt="facebook" height="35px"></a>
+                <a href="#"><img src="../Assets/images/youtube.png" alt="facebook" height="45px" width="60px"></a>
+                <a href="#"><img src="../Assets/images/insta.png" alt="facebook" height="35px"></a>
+                <a href="#"><img src="../Assets/images/linkedin.png" alt="facebook" height="35px"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

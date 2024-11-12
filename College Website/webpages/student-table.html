@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        button {
+            border-radius: 10px;
+            padding: 6px 15px;
+            background-color: #1438fff2;
+            color: #fff;
+            font-size: 16px;
+            border: 2px solid blue;
+            font-weight: 700;
+        }
+
+        .del {
+            background-color: rgb(255, 70, 70);
+            border: 2px solid rgb(197, 42, 42);
+        }
+
+        img {
+            height: 27px;
+            padding-top: 7px;
+        }
+
+        h2 {
+            margin: 30px 0;
+        }
+
+        th,
+        td {
+            font-size: 13px;
+        }
+
+        .search {
+            margin: 0 7px 20px;
+            padding: 6px;
+            border-radius: 10px;
+            border: 2px solid gray;
+        }
+
+        .container {
+            padding: 0 30px;
+
+        }
+
+        .sidebar {
+            
+            background-color: rgb(201, 197, 197);
+            height: 100vh;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: rgb(96, 94, 94);
+        }
+
+        .logout {
+            margin-left: 50px;
+
+        }
+
+        .button {
+            margin-top: 150px;
+        }
+       
+    </style>
+</head>
+
+
+<body>
+    <div class="main row row-cols-2">
+        <div class="sidebar col-2 ">
+            <h3 class="p-3 fw-bold">Office Use</h3>
+            <div>
+                <h5 class="ps-3 fs-5 fw-bold">Students</h5>
+                <ul>
+                    <li><a href="./crud.html">Add Student</a></li>
+                    <li class="pt-1"><a href="./student-table.html">Student Details</a></li>
+                </ul>
+                <h5 class="ps-3 fs-5 fw-bold">Staffs</h5>
+                <ul>
+                    <li><a href="./crud.html">Add Staff</a></li>
+                    <li class="pt-1"><a href="./student-table.html">Staff Details</a></li>
+                </ul>
+                <a href="../index.html" class="logout"><button class="button">logout</button></a>
+            </div>
+
+        </div>
+        <div class="container col-10">
+            <h2 class="text-center">Students Information</h2>
+            <div class="d-flex justify-content-between">
+                <p class="fw-bold text-primary">Total Students : <span id="total"></span></p>
+                <div><input type="search" class="search" placeholder="Type here..."><button>Search</button></div>
+            </div>
+            <div class="table-responsive">
+                <table border="1" cellspacing="0"
+                    class="table table-striped border-secondary border-2 text-center container table-bordered ">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>RollNo</th>
+                            <th>Department</th>
+                            <th>Semester</th>
+                            <th>Email</th>
+                            <th>Phone No</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="dataList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        const data2 = JSON.parse(localStorage.getItem('data')) || [];
+        console.log(data2);
+
+        function displayData(dataArray = data2) {
+            const ListData = document.querySelector('.dataList');
+            ListData.innerHTML = '';
+
+            dataArray.forEach((item, index) => {
+                const row = document.createElement('tr')
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.rollno}</td>
+                    <td>${item.dept}</td>
+                    <td>${item.sem}</td>
+                    <td>${item.email}</td>
+                    <td>${item.phone}</td>
+                    <td>${item.address}</td>
+                    <td class="action">
+                    <a href="#" onclick="editData(${index})"><img src="../Assets/images/edit.png" alt="edit"></a>
+                    <a href="#" onclick="deleteData(${index})"><img src="../Assets/images/delete.png" alt="delete"></a>
+                    </td>
+                    `;
+                ListData.appendChild(row)
+            });
+        }
+
+        document.getElementById('total').innerHTML = data2.length;
+
+        function deleteData(index) {
+            data2.splice(index, 1);
+            localStorage.setItem('data', JSON.stringify(data2));
+            displayData();
+        }
+
+        document.querySelector('input[type="search"]').addEventListener('input', function (event) {
+            const query = event.target.value.toLowerCase();
+            const filteredData = data2.filter(item =>
+                item.name.toLowerCase().includes(query)
+            );
+            displayData(filteredData); // Update display with filtered data
+        });
+
+
+        function editData(index) {
+
+            // Store the data to be edited in localStorage
+            localStorage.setItem('editIndex', index);
+            // Redirect back to the form page with data pre-filled
+            window.location.href = 'crud.html';
+
+        }  
+
+        displayData();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../Assets/crud.js"></script>
+</body>
+
+</html>

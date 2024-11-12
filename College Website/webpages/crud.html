@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add student</title>
+    <link rel="stylesheet" href="../Assets/crud.css">
+</head>
+
+<body>
+    <div class="contain">
+        <div class="sidebar">
+            <h2 class="p">Office Use</h2>
+            <div>
+                <h3 class="ps">Students</h3>
+                <ul>
+                    <li><a href="./crud.html">Add Student</a></li>
+                    <li><a href="./student-table.html">Student Details</a></li>
+                </ul>
+                <h3 class="ps">Staffs</h3>
+                <ul>
+                    <li><a href="./crud.html">Add Staff</a></li>
+                    <li><a href="./student-table.html">Staff Details</a></li>
+                </ul>
+                <a href="../index.html" class="logout"><button class="button">logout</button></a>
+            </div>
+
+        </div>
+        <div class="box">
+            <h2 class="head">Create Student Information</h2>
+            <div class="main">
+                <form id="studentForm" action="crud.html">
+                    <input type="hidden" id="editIndex" value="-1">
+
+                    <label for="name">Name<span>*</span></label><br>
+                    <input type="text" id="name"><br><br>
+
+                    <label for="rollno">Roll No<span>*</span></label><br>
+                    <input type="number" id="rollno"><br><br>
+
+                    <label for="dept">Department<span>*</span></label><br>
+                    <input type="text" id="dept" placeholder="eg. CSE"><br><br>
+
+                    <label for="sem">Semester<span>*</span></label><br>
+                    <input type="text" id="sem" placeholder="eg. 1 "><br><br>
+
+                    <label for="email">Email<span>*</span></label><br>
+                    <input type="email" id="email"><br><br>
+
+                    <label for="phone">Phone No<span>*</span></label><br>
+                    <input type="number" id="phone"><br><br>
+
+                    <label for="address">Address<span>*</span></label><br>
+                    <textarea id="address" rows="1"></textarea><br><br>
+
+                    <div class="btn"><button type="submit" onclick="fun()">Add / Update</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../Assets/script.js"></script>
+    <!-- <script>
+        let data = JSON.parse(localStorage.getItem('data')) || []
+
+
+        document.getElementById('studentForm').addEventListener('submit', function (event) {
+
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let rollno = document.getElementById('rollno').value;
+            let dept = document.getElementById('dept').value;
+            let sem = document.getElementById('sem').value;
+            let email = document.getElementById('email').value;
+            let phone = document.getElementById('phone').value;
+            let address = document.getElementById('address').value;
+            let editIndex = document.getElementById('editIndex').value;
+
+            if (editIndex == '-1') {
+                data.push({ name, rollno, dept, sem, email, phone, address })
+            }
+            else {
+                data[editIndex] = { name, rollno, dept, sem, email, phone, address }
+                document.getElementById('editIndex').value = '-1'
+            }
+            localStorage.setItem('data', JSON.stringify(data))
+            document.getElementById('studentForm').reset()
+            window.location.href = "./student-table.html";
+        })
+    </script> -->
+</body>
+
+</html>
